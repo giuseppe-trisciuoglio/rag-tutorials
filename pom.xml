@@ -13,6 +13,7 @@
         <module>rag-with-deepseek-ollama</module>
         <module>chatbot-hair-booking-system</module>
         <module>assistant-helpdesk</module>
+        <module>chunking-strategies</module>
     </modules>
 
 

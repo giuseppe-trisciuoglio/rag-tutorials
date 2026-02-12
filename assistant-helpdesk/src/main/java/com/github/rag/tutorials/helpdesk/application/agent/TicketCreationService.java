@@ -22,7 +22,7 @@ public class TicketCreationService {
                 message.getText(),
                 state.getCustomerCode(),
                 state.getSelectedContractNumber(),
-                state.getIssueType().toString()
+                state.getIssueType() != null ? state.getIssueType().toString() : ""
         );
         
         TicketCreationResult result = ticketCreationResult.content();
