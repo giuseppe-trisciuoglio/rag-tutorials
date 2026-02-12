@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Pagamento - Hotel Marina Rimini</title>
+    <style>
+        :root {
+            font-family: "Inter", "Segoe UI", sans-serif;
+            color: #0f172a;
+            background: #f1f5f9;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(160deg, #e2e8f0, #cbd5e1);
+        }
+        .card {
+            width: 100%;
+            max-width: 520px;
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+            overflow: hidden;
+        }
+        .header {
+            padding: 18px 20px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0f766e, #0f766e 50%, #115e59);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .content {
+            padding: 20px;
+            display: grid;
+            gap: 14px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        .label {
+            color: #475569;
+        }
+        .value {
+            font-weight: 600;
+            text-align: right;
+        }
+        .amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f766e;
+            text-align: center;
+        }
+        button {
+            border: 0;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: #ffffff;
+            background: #0f766e;
+            transition: background 0.2s ease-in-out;
+        }
+        button:hover:not(:disabled) {
+            background: #0d9488;
+        }
+        button:disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+        .status {
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .status.show {
+            display: block;
+        }
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .status.success {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .link-back {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+        .link-back a {
+            color: #0f766e;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<main class="card">
+    <section class="header">
+        <h1>Hotel Marina Rimini - Demo Pagamento</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <span class="label">Pre-booking ID</span>
+            <span class="value" id="preBookingId">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Ospite</span>
+            <span class="value" id="guestName">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Email</span>
+            <span class="value" id="email">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Data prenotazione</span>
+            <span class="value" id="bookingDate">-</span>
+        </div>
+        <div class="amount" id="amountLabel">- EUR</div>
+        <button id="confirmPaymentBtn">Conferma pagamento</button>
+        <div id="statusBox" class="status"></div>
+        <div class="link-back">
+            Torna alla chat: <a href="/">Apri assistente</a>
+        </div>
+    </section>
+</main>
+<script src="checkout.js"></script>
+</body>
+</html>

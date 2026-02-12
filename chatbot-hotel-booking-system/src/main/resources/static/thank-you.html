@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazione Confermata - Hotel Marina Rimini</title>
+    <style>
+        :root {
+            font-family: "Inter", "Segoe UI", sans-serif;
+            color: #0f172a;
+            background: #e2e8f0;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(160deg, #e2e8f0, #cbd5e1);
+        }
+        .card {
+            width: 100%;
+            max-width: 620px;
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+            overflow: hidden;
+        }
+        .header {
+            padding: 20px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0f766e, #0f766e 50%, #115e59);
+        }
+        .header h1 {
+            margin: 0 0 4px 0;
+            font-size: 1.2rem;
+        }
+        .header p {
+            margin: 0;
+            opacity: 0.92;
+            font-size: 0.95rem;
+        }
+        .content {
+            padding: 20px;
+            display: grid;
+            gap: 14px;
+        }
+        .summary {
+            border-radius: 12px;
+            padding: 12px 14px;
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            color: #134e4a;
+            font-size: 0.95rem;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        .label {
+            color: #475569;
+        }
+        .value {
+            font-weight: 600;
+            text-align: right;
+        }
+        .amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f766e;
+            text-align: center;
+        }
+        .links {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .btn {
+            border: 0;
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-primary {
+            color: #ffffff;
+            background: #0f766e;
+        }
+        .btn-secondary {
+            color: #0f766e;
+            background: #e2e8f0;
+        }
+        .error {
+            border-radius: 10px;
+            padding: 10px 12px;
+            background: #fee2e2;
+            color: #991b1b;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .error.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<main class="card">
+    <section class="header">
+        <h1>Grazie, prenotazione confermata</h1>
+        <p>Hotel Marina Rimini</p>
+    </section>
+    <section class="content">
+        <div class="summary" id="summaryBox">Stiamo caricando il riepilogo della tua prenotazione...</div>
+        <div id="errorBox" class="error"></div>
+        <div class="row">
+            <span class="label">Numero prenotazione</span>
+            <span class="value" id="bookingNumber">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Pre-booking ID</span>
+            <span class="value" id="preBookingId">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Ospite</span>
+            <span class="value" id="guestName">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Email</span>
+            <span class="value" id="email">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Data prenotazione</span>
+            <span class="value" id="bookingDate">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Check-in</span>
+            <span class="value" id="checkIn">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Check-out</span>
+            <span class="value" id="checkOut">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Confermata il</span>
+            <span class="value" id="confirmedAt">-</span>
+        </div>
+        <div class="row">
+            <span class="label">Stato pagamento</span>
+            <span class="value" id="paymentStatus">-</span>
+        </div>
+        <div class="amount" id="amountLabel">- EUR</div>
+        <div class="links">
+            <a class="btn btn-primary" href="/">Torna alla chat</a>
+            <a class="btn btn-secondary" id="backToCheckoutLink" href="/checkout.html">Apri checkout</a>
+        </div>
+    </section>
+</main>
+<script src="thank-you.js"></script>
+</body>
+</html>
